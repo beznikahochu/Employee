@@ -12,6 +12,6 @@ public class Employee {
     private String lastName;
     private Long departmentId;
     private String jobTitle;
-   private Gender gender;
+    private Gender gender;
     private LocalDate dateOfBirth;
 }
