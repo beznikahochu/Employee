@@ -1,87 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <databaseChangeLog
-        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
-      http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.5.xsd">
-    <changeSet id="234223" author="user">
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+  <changeSet id="initial" author="user">
 
-        <createTable tableName="employee">
-            <column name="employee_id" type="bigint" autoIncrement="true">
-                <constraints  nullable="false"
-                              primaryKey="true"
-                              unique="true"/>
-            </column>
-            <column name="first_name" type="varchar(100)">
-                <constraints nullable="false" />
-            </column>
+    <createTable tableName="employee">
+      <column name="employee_id" type="bigint" autoIncrement="true">
+        <constraints nullable="false"
+          primaryKey="true"
+          unique="true"/>
+      </column>
+      <column name="first_name" type="varchar(100)">
+        <constraints nullable="false"/>
+      </column>
 
-            <column name="last_name" type="varchar(100)">
-                <constraints nullable="false" />
-            </column>
+      <column name="last_name" type="varchar(100)">
+        <constraints nullable="false"/>
+      </column>
 
-            <column name="department_id" type="bigint">
-                <constraints nullable="false" />
-            </column>
+      <column name="department_id" type="bigint">
+        <constraints nullable="false"/>
+      </column>
 
-            <column name="job_title" type="varchar(100)">
-                <constraints nullable="false" />
-            </column>
+      <column name="job_title" type="varchar(100)">
+        <constraints nullable="false"/>
+      </column>
 
-            <column name="gender" type="varchar(100)">
-                <constraints nullable="false" />
-            </column>
+      <column name="gender" type="varchar(100)">
+        <constraints nullable="false"/>
+      </column>
 
-            <column name="date_of_birth" type="date">
-                <constraints nullable="false" />
-            </column>
-        </createTable>
+      <column name="date_of_birth" type="date">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
 
-        <insert tableName="employee">
-            <column name="first_name" value="Денисик" />
-            <column name="last_name" value="Вадим" />
-            <column name="department_id" value="1" />
-            <column name="job_title" value="Java Developer" />
-            <column name="gender" value="MALE" />
-            <column name="date_of_birth" value="22.04.1999" />
-        </insert>
+    <insert tableName="employee">
+      <column name="first_name" value="Денисик"/>
+      <column name="last_name" value="Вадим"/>
+      <column name="department_id" value="1"/>
+      <column name="job_title" value="Java Developer"/>
+      <column name="gender" value="MALE"/>
+      <column name="date_of_birth" value="22.04.1999"/>
+    </insert>
 
-        <insert tableName="employee">
-            <column name="first_name" value="Григорий" />
-            <column name="last_name" value="Лепс" />
-            <column name="department_id" value="1" />
-            <column name="job_title" value="Спявак" />
-            <column name="gender" value="MALE" />
-            <column name="date_of_birth" value="22.04.1950" />
-        </insert>
+    <insert tableName="employee">
+      <column name="first_name" value="Григорий"/>
+      <column name="last_name" value="Лепс"/>
+      <column name="department_id" value="1"/>
+      <column name="job_title" value="Спявак"/>
+      <column name="gender" value="MALE"/>
+      <column name="date_of_birth" value="22.04.1950"/>
+    </insert>
 
-        <insert tableName="employee">
-            <column name="first_name" value="Леонид" />
-            <column name="last_name" value="Кеда" />
-            <column name="department_id" value="1" />
-            <column name="job_title" value="Java Developer" />
-            <column name="gender" value="MALE" />
-            <column name="date_of_birth" value="07.08.1995" />
-        </insert>
+    <insert tableName="employee">
+      <column name="first_name" value="Леонид"/>
+      <column name="last_name" value="Кеда"/>
+      <column name="department_id" value="1"/>
+      <column name="job_title" value="Java Developer"/>
+      <column name="gender" value="MALE"/>
+      <column name="date_of_birth" value="07.08.1995"/>
+    </insert>
 
-        <insert tableName="employee">
-            <column name="first_name" value="Ленка" />
-            <column name="last_name" value="Сидорова" />
-            <column name="department_id" value="1" />
-            <column name="job_title" value="Комик" />
-            <column name="gender" value="FEMALE" />
-            <column name="date_of_birth" value="22.04.1999" />
-        </insert>
+    <insert tableName="employee">
+      <column name="first_name" value="Ленка"/>
+      <column name="last_name" value="Сидорова"/>
+      <column name="department_id" value="1"/>
+      <column name="job_title" value="Комик"/>
+      <column name="gender" value="FEMALE"/>
+      <column name="date_of_birth" value="22.04.1999"/>
+    </insert>
 
-        <insert tableName="employee">
-            <column name="first_name" value="Александра" />
-            <column name="last_name" value="Антонова" />
-            <column name="department_id" value="1" />
-            <column name="job_title" value="Доярка" />
-            <column name="gender" value="MALE" />
-            <column name="date_of_birth" value="22.04.1996" />
-        </insert>
+    <insert tableName="employee">
+      <column name="first_name" value="Александра"/>
+      <column name="last_name" value="Антонова"/>
+      <column name="department_id" value="1"/>
+      <column name="job_title" value="Доярка"/>
+      <column name="gender" value="MALE"/>
+      <column name="date_of_birth" value="22.04.1996"/>
+    </insert>
 
-    </changeSet>
+  </changeSet>
 </databaseChangeLog>
