@@ -19,8 +19,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
   public void create(Employee employee) {
     String sql =
         "INSERT INTO employee (first_name, last_name, department_id, job_title, gender, date_of_birth)\n"
-            +
-            "VALUES (?, ?, ?, ?, ?, ?)";
+            + "VALUES (?, ?, ?, ?, ?, ?)";
     jdbcTemplate.update(
         sql,
         employee.getFirstName(),
