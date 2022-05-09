@@ -51,7 +51,6 @@ class EmployeeServiceImplTest {
 
         EmployeeDto employeeDto = employeeService.getById(EMPLOYEE_ID);
 
-        verify(employeeDaoMock, times(1)).findById(EMPLOYEE_ID);
         assertEquals(EMPLOYEE_ID, employeeDto.getId(),"Id must be equal to " + EMPLOYEE_ID);
         assertEquals(employeeName, employeeDto.getFirstName(),
                 "First name must be equal to " + employeeName);
