@@ -7,9 +7,8 @@ import java.time.LocalDate;
 import lombok.Data;
 
 @Data
-public class EmployeeDto {
+public class EmployeeModificationDto {
 
-    private Long id;
     private String firstName;
     private String lastName;
     private Long departmentId;

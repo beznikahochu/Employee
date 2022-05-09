@@ -1,13 +1,12 @@
 package com.godeltech.training.denisikvadim.testtask.controller;
 
-import com.godeltech.training.denisikvadim.testtask.dto.EmployeeCreationDto;
+import com.godeltech.training.denisikvadim.testtask.dto.EmployeeModificationDto;
 import com.godeltech.training.denisikvadim.testtask.dto.EmployeeDto;
 import com.godeltech.training.denisikvadim.testtask.service.EmployeeService;
+
 import java.util.List;
-import java.util.Optional;
+
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,33 +21,30 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class EmployeeController {
 
-  private final EmployeeService employeeService;
+    private final EmployeeService employeeService;
 
-  @GetMapping
-  public List<EmployeeDto> getAll() {
-    return employeeService.getAll();
-  }
+    @GetMapping
+    public List<EmployeeDto> getAll() {
+        return employeeService.getAll();
+    }
 
-  @GetMapping("/{id}")
-  public ResponseEntity<EmployeeDto> getEmployee(@PathVariable Long id) {
-    Optional<EmployeeDto> employeeDtoOptional = employeeService.getById(id);
-    return employeeDtoOptional.map(employeeDto -> new ResponseEntity(employeeDto, HttpStatus.OK))
-        .orElseGet(() -> new ResponseEntity(HttpStatus.NOT_FOUND));
-  }
+    @GetMapping("/{id}")
+    public EmployeeDto getEmployee(@PathVariable Long id) {
+        return employeeService.getById(id);
+    }
 
-  @PostMapping
-  public void create(@RequestBody EmployeeCreationDto employeeCreationDto) {
-    employeeService.create(employeeCreationDto);
-  }
+    @PostMapping
+    public void create(@RequestBody EmployeeModificationDto employeeModificationDto) {
+        employeeService.create(employeeModificationDto);
+    }
 
-  @PutMapping
-  private void update(@RequestBody EmployeeDto employeeDto) {
-    employeeService.update(employeeDto);
-  }
+    @PutMapping("/{id}")
+    private void update(@PathVariable Long id, @RequestBody EmployeeModificationDto employeeDto) {
+        employeeService.update(id, employeeDto);
+    }
 
-  @DeleteMapping("/{id}")
-  private void delete(@PathVariable Long id) {
-    employeeService.delete(id);
-  }
-
+    @DeleteMapping("/{id}")
+    private void delete(@PathVariable Long id) {
+        employeeService.delete(id);
+    }
 }
