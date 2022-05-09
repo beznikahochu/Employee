@@ -1,5 +1,5 @@
 # Описание
 REST сервис позволяющий производить CRUD операции над таблицой employee в базе данных.
 
-## Используемые технологии
-Spring JDBS, Spring MVC, Maven
+## Tехнологии
+Spring JDBS, Spring MVC, Maven, JUnit, Mockito
